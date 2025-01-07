@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+
+<fieldset name="yaquiz" addfieldprefix="Joomla\Component\Yaquiz\Administrator\Field">
+<field
+name="id"
+type="text"
+label="JGLOBAL_FIELD_ID_LABEL"
+class="readonly"
+default="0"
+readonly="true"
+/>
+<field
+name="title"
+type="text"
+label="COM_YAQUIZ_YAQUIZ_TITLE_LABEL"
+required="true"
+/>
+<field
+name="alias"
+type="text"
+label="JFIELD_ALIAS_LABEL"
+description="JFIELD_ALIAS_DESC"
+class="validate-alias"
+/>
+<field
+name="catid"
+type="categoryedit"
+label="JCATEGORY"
+addfieldprefix="Joomla\Component\Categories\Administrator\Field"
+default="0"
+>
+<option value="0">Uncategorized</option>
+</field>
+
+
+<field
+name="description"
+type="editor"
+label="COM_YAQUIZ_YAQUIZ_DESCRIPTION_LABEL"
+filter="JComponentHelper::filterText"
+buttons="true"
+/>
+</fieldset>
+<fieldset name="publishing" addfieldprefix="Joomla\Component\Yaquiz\Administrator\Field">
+
+<field
+name="published"
+type="list"
+label="JSTATUS"
+required="true"
+default="1"
+>
+<option value="1">JPUBLISHED</option>
+<option value="0">JUNPUBLISHED</option>
+</field>
+
+<field
+name="access"
+type="accesslevel"
+label="JFIELD_ACCESS_LABEL"
+description="JFIELD_ACCESS_DESC"
+filter="UINT"
+validate="options"
+useglobal="true"
+/>
+
+<field
+name="quiz_displaymode"
+type="list"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_DISPLAYMODE_LABEL"
+useglobal="true"
+>
+<option value="default">COM_YAQUIZ_QTYPE_DEFAULT</option>
+<option value="individual">COM_YAQUIZ_QTYPE_INDIVIDUAL</option>
+<option value="jsquiz">COM_YAQUIZ_QTYPE_JSQUIZ</option>
+<option value="instareview">COM_YAQUIZ_QTYPE_INSTAREVIEW</option>
+</field>
+
+<field
+name="jsquiz_note"
+type="note"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_JSQUIZ_NOTE_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_JSQUIZ_NOTE_DESC"
+showon="quiz_displaymode:jsquiz"
+/>
+
+
+<field
+name="quiz_question_numbering"
+type="radio"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_QUESTION_NUMBERING_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_QUESTION_NUMBERING_DESC"
+required="true"
+default="1"
+class="btn-group btn-group-yesno"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+</fieldset>
+
+<fieldset name="grading" addfieldprefix="Joomla\Component\Yaquiz\Administrator\Field"> 
+
+<field
+name="quiz_showfeedback"
+type="radio"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_FEEDBACK_LABEL"
+required="true"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_FEEDBACK_DESC"
+default="1"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+<field
+name="quiz_feedback_showcorrect"
+type="radio"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_FEEDBACK_SHOWCORRECT_LABEL"
+required="true"
+showon="quiz_showfeedback:1"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_FEEDBACK_SHOWCORRECT_DESC"
+default="1"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+
+
+<field
+name="quiz_use_points"
+type="radio"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_USE_POINTS_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_USE_POINTS_DESC"
+required="true"
+default="0"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+
+
+<field 
+name="passing_score"
+type="number"
+min="0"
+max="100"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_PASSING_SCORE_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_PASSING_SCORE_DESC"
+useglobal="true"
+/>
+
+
+</fieldset>
+
+
+
+
+<fieldset name="usersandrecords" addfieldprefix="Joomla\Component\Yaquiz\Administrator\Field">
+<field
+name="quiz_record_results"
+type="list"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_RECORD_RESULTS_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_RECORD_RESULTS_DESC"
+useglobal="true"
+validate="options"
+>
+<option value="0">COM_YAQUIZ_RECLEVEL0</option>
+<option value="1">COM_YAQUIZ_RECLEVEL1</option>
+<option value="2">COM_YAQUIZ_RECLEVEL2</option>
+<option value="3">COM_YAQUIZ_RECLEVEL3</option>
+</field>
+
+
+<field
+name="max_attempts"
+type="number"
+label="COM_YAQUIZ_YAQUIZ_MAX_ATTEMPTS_LABEL"
+description="COM_YAQUIZ_YAQUIZ_MAX_ATTEMPTS_DESC"
+validate="number"
+useglobal="true"
+/>
+
+<field
+name="quiz_use_timer"
+type="list"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_USE_TIMER_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_USE_TIMER_DESC"
+useglobal="true"
+>
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+
+<field
+name="quiz_timer_limit"
+type="number"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_TIMER_LIMIT_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_TIMER_LIMIT_DESC"
+useglobal="true"
+/>
+
+
+
+
+<field
+name="note_results"
+type="note"
+showon="quiz_record_results:3"
+label="WARNING: If You Save Everything..."
+description="In addition to saving scores, this saves every user response to every question, and the feedback they got for that question. This may be a lot of data depending on how many users you have."
+/>
+
+<field
+name="quiz_record_guest_results"
+type="list"
+label="COM_YAQUIZ_RECORD_GUEST_RESULTS_LABEL"
+description="COM_YAQUIZ_RECORD_GUEST_RESULTS_DESC"
+useglobal="true"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+<field
+name="quiz_show_general_stats"
+type="list"
+label="COM_YAQUIZ_SHOW_GENSTAT_LABEL"
+description="COM_YAQUIZ_SHOW_GENSTAT_DESC"
+useglobal="true"
+>
+
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+
+
+
+
+<field
+name="use_certificates"
+type="list"
+label="COM_YAQUIZ_USE_CERTIFICATES"
+description="COM_YAQUIZ_USE_CERTIFICATES_DESC"
+useglobal="true"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+
+<field
+name="certificate_file"
+type="filelist"
+label="COM_YAQUIZ_CERTFILE"
+description="COM_YAQUIZ_CERTFILE_DESC"
+useglobal="true"
+directory="/components/com_yaquiz/certificates"
+fileFilter="\.html$"
+>
+</field>
+
+<field
+name="created"
+type="calendar"
+label="JGLOBAL_FIELD_CREATED_LABEL"
+class="readonly"
+readonly="true"
+filter="user_utc"
+format="%Y-%m-%d %H:%M:%S"
+filterformat="Y-m-d H:i:s"
+/>
+
+
+<field
+name="created_by"
+type="user"
+label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+class="readonly"
+readonly="true"
+/>
+<field
+name="modified"
+type="calendar"
+label="JGLOBAL_FIELD_MODIFIED_LABEL"
+class="readonly"
+showtime="true"
+readonly="true"
+filter="user_utc"
+format="%Y-%m-%d %H:%M:%S"
+filterformat="Y-m-d H:i:s"
+/>
+<field
+name="modified_by"
+type="user"
+label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+class="readonly"
+readonly="true"
+/>
+
+
+<field
+name="hits"
+type="text"
+label="JGLOBAL_HITS"
+class="readonly"
+default="0"
+readonly="true"
+/>
+
+</fieldset>
+</form>

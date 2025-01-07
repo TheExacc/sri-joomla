@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<inlinehelp button="hide"/>
+	<fieldset
+		name="component"
+		label="COM_YAQUIZ_COMPONENT">
+
+        <field
+            name="theme"
+            type="list"
+            label="COM_YAQUIZ_FIELD_THEME_LABEL"
+            description="COM_YAQUIZ_FIELD_THEME_DESC"
+            default="default"
+            >
+            <option value="default">COM_YAQUIZ_STYLEDEFAULT</option>
+            <option value="dark">COM_YAQUIZ_STYLE_DARK</option>
+            <option value="custom">COM_YAQUIZ_STYLE_CUSTOM</option>
+        </field>
+        <field
+            name="record_hits"
+            type="radio"
+            label="COM_YAQUIZ_FIELD_RECORD_HITS_LABEL"
+            description="COM_YAQUIZ_FIELD_RECORD_HITS_DESC"
+            default="0"
+             class="btn-group btn-group-yesno"
+            >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field
+            name="record_submissions"
+            type="radio"
+            label="COM_YAQUIZ_FIELD_RECORD_SUBMISSIONS_LABEL"
+            description="COM_YAQUIZ_FIELD_RECORD_SUBMISSIONS_DESC"
+            default="0"
+             class="btn-group btn-group-yesno"
+        >
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+        </field>
+
+        <field
+        name="get_mathjax"
+        type="list"
+        label="COM_YAQUIZ_FIELD_LOAD_MATHJAX_LABEL"
+        description="COM_YAQUIZ_FIELD_LOAD_MATHJAX_DESC"
+        default="0"
+        >
+        <option value="2">COM_YAQUIZ_MJFROMLOCAL</option>
+        <option value="1">COM_YAQUIZ_MJFROMCDN</option>
+        <option value="0">JNO</option>
+        </field>
+
+        <field
+        name="respect_jcache"
+        type="radio"
+        label="COM_YAQUIZ_RESPECT_CACHE_LABEL"
+        description="COM_YAQUIZ_RESPECT_CACHE_DESC"
+        default="1"
+         class="btn-group btn-group-yesno"
+        >
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+        </field>
+
+        <field
+        name="show_attempts_left"
+        type="radio"
+        label="COM_YAQUIZ_SHOW_ATTEMPTS_LEFT_LABEL"
+        description="COM_YAQUIZ_SHOW_ATTEMPTS_LEFT_DESC"
+        default="1"
+        class="btn-group btn-group-yesno"
+        >
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+        </field>
+
+
+        <field
+            name="credit_note"
+            type="note"
+            label="Extension By Kevin Olson"
+            description="COM_YAQUIZ_XML_DESCRIPTION"
+        />
+
+
+
+
+</fieldset>
+<fieldset
+name="globaloptions"
+label="COM_YAQUIZ_GLOBAL_OPTIONS_LABEL">
+
+<fieldset
+name="quizzes"
+label="COM_YAQUIZ_GLOBAL_QUIZ_OPTIONS_LABEL">
+
+    <field
+    name="noteglobal"
+    type="note"
+    label="COM_YAQUIZ_GLOBAL_OPTIONS_LABEL"
+    description="COM_YAQUIZ_GLOBAL_OPTIONS_DESC"
+    />
+
+    <field
+    name="access"
+    type="accesslevel"
+    label="JFIELD_ACCESS_LABEL"
+    description="JFIELD_ACCESS_DESC"
+    filter="UINT"
+    validate="options"
+    />
+
+
+    <field
+    name="quiz_displaymode"
+    type="list"
+    label="COM_YAQUIZ_YAQUIZ_QUIZ_DISPLAYMODE_LABEL"
+    default="default"
+    >
+    <option value="default">COM_YAQUIZ_QTYPE_DEFAULT</option>
+    <option value="individual">COM_YAQUIZ_QTYPE_INDIVIDUAL</option>
+    <option value="jsquiz">COM_YAQUIZ_QTYPE_JSQUIZ</option>
+    <option value="instareview">COM_YAQUIZ_QTYPE_INSTAREVIEW</option>
+    </field>    
+
+    <field 
+    name="passing_score"
+    type="number"
+    min="0"
+    max="100"
+    label="COM_YAQUIZ_YAQUIZ_QUIZ_PASSING_SCORE_LABEL"
+    description="COM_YAQUIZ_YAQUIZ_QUIZ_PASSING_SCORE_DESC"
+    default="70"
+    />
+
+</fieldset>
+
+
+<fieldset
+name="recordkeeping"
+label="COM_YAQUIZ_GLOBAL_RECORDKEEPING_OPTIONS_LABEL">
+
+<field
+name="quiz_record_results"
+type="list"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_RECORD_RESULTS_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_RECORD_RESULTS_DESC"
+required="true"
+default="0">
+<option value="0">COM_YAQUIZ_RECLEVEL0</option>
+<option value="1">COM_YAQUIZ_RECLEVEL1</option>
+<option value="2">COM_YAQUIZ_RECLEVEL2</option>
+<option value="3">COM_YAQUIZ_RECLEVEL3</option>
+</field>
+
+<field
+name="max_attempts"
+type="number"
+label="COM_YAQUIZ_YAQUIZ_MAX_ATTEMPTS_LABEL"
+description="COM_YAQUIZ_YAQUIZ_MAX_ATTEMPTS_DESC"
+default="0"
+/>
+
+<field
+name="quiz_use_timer"
+type="list"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_USE_TIMER_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_USE_TIMER_DESC"
+default="0"
+>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</field>
+
+<field
+name="quiz_timer_limit"
+type="number"
+label="COM_YAQUIZ_YAQUIZ_QUIZ_TIMER_LIMIT_LABEL"
+description="COM_YAQUIZ_YAQUIZ_QUIZ_TIMER_LIMIT_DESC"
+default="15"
+/>
+
+
+<field
+name="quiz_record_guest_results"
+type="radio"
+label="COM_YAQUIZ_RECORD_GUEST_RESULTS_LABEL"
+description="COM_YAQUIZ_RECORD_GUEST_RESULTS_DESC"
+default="0"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+
+<field
+name="quiz_show_general_stats"
+type="radio"
+label="COM_YAQUIZ_SHOW_GENSTAT_LABEL"
+description="COM_YAQUIZ_SHOW_GENSTAT_DESC"
+default="0"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+<field
+name="user_results_page_enabled"
+type="radio"
+label="COM_YAQUIZ_USER_RESULTS_PAGE_ENABLED_LABEL"
+description="COM_YAQUIZ_USER_RESULTS_PAGE_ENABLED_DESC"
+default="1"
+>
+<option value="1">JYES</option>
+<option value="0">JNO</option>
+</field>
+
+<field
+name="user_results_per_page"
+type="list"
+label="COM_YAQUIZ_USER_RESULTS_PER_PAGE_LABEL"
+description="COM_YAQUIZ_USER_RESULTS_PER_PAGE_DESC"
+default="10"
+>
+<option value="5">5</option>
+<option value="10">10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+<option value="25">25</option>
+<option value="50">50</option>
+</field>
+
+
+</fieldset>
+
+
+<fieldset
+name="globalquestions"
+label="COM_YAQUIZ_GLOBAL_QUESTION_OPTIONS_LABEL">
+
+    <field
+    name="randomize_mchoice"
+    type="radio"
+    label="COM_YAQUIZ_FIELD_RANDOMIZE_MCHOICE_LABEL"
+    description="COM_YAQUIZ_FIELD_RANDOMIZE_MCHOICE_DESC"
+    default="0"
+    >
+    <option value="1">JYES</option>
+    <option value="0">JNO</option>
+    </field>
+
+    <field 
+    name="shortans_ignore_trailing"
+    type="radio"
+    label="COM_YAQUIZ_FIELD_SHORTANS_IGNORE_TRAILING_LABEL"
+    description="COM_YAQUIZ_FIELD_SHORTANS_IGNORE_TRAILING_DESC"
+    default="1"
+    >
+    <option value="1">JYES</option>
+    <option value="0">JNO</option>
+    </field>
+</fieldset>
+<fieldset
+name="globalcerts"
+label="COM_YAQUIZ_GLOBAL_CERT_OPTIONS_LABEL">
+
+
+    <field
+    name="use_certificates"
+    type="list"
+    label="COM_YAQUIZ_GLOBAL_USE_CERTIFICATES"
+    description="COM_YAQUIZ_GLOBAL_USE_CERTIFICATES_DESC"
+    default="0"
+    class="btn-group btn-group-yesno"
+    >
+    <option value="1">JYES</option>
+    <option value="0">JNO</option>
+    </field>
+
+    <field
+    name="certificate_file"
+    type="filelist"
+    label="COM_YAQUIZ_GLOBAL_CERTFILE"
+    description="COM_YAQUIZ_GLOBAL_CERTFILE_DESC"
+    default="default.html"
+    directory="/components/com_yaquiz/certificates"
+    fileFilter="\.html$"
+
+    />
+
+
+
+
+
+
+</fieldset>
+
+</fieldset>
+
+<fieldset
+name="language"
+>
+<field
+name="lang_pass"
+type="textarea"
+label="COM_YAQUIZ_FIELD_LANG_PASS_LABEL"
+description="COM_YAQUIZ_FIELD_LANG_PASS_DESC"
+default=""
+/>
+<field
+name="lang_fail"
+type="textarea"
+label="COM_YAQUIZ_FIELD_LANG_FAIL_LABEL"
+description="COM_YAQUIZ_FIELD_LANG_FAIL_DESC"
+default=""
+/>
+</fieldset>
+
+<!-- access settings -->
+<fieldset
+name="permissions"
+label="JCONFIG_PERMISSIONS_LABEL"
+description="JCONFIG_PERMISSIONS_DESC"
+>
+<field
+    name="rules"
+    type="rules"
+    label="JCONFIG_PERMISSIONS_LABEL"
+    validate="rules"
+    filter="rules"
+    component="com_yaquiz"
+    section="component"
+/>
+</fieldset>
+
+</config>

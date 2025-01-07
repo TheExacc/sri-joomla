@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="filters">
+        <field
+        name="filter_title"
+        type="text"
+        label="COM_YAQUIZ_FILTER_TITLE_LABEL"
+        />
+		<field
+			name="filter_categories"
+			type="categoryedit"
+			label="JCATEGORY"
+			addfieldprefix="Joomla\Component\Categories\Administrator\Field"
+			default=""
+		>
+        <option value="0">COM_YAQUIZ_FILTER_UNCATEGORIZED_ALL</option>
+        </field>
+
+        <field
+             name="filter_order"
+                type="list"
+                label="JGLOBAL_SORT_BY"
+                default="q.id ASC"
+                >
+                <option value="q.id ASC">COM_YAQUIZ_QUESTION_ID_ASC</option>
+                <option value="q.id DESC">COM_YAQUIZ_QUESTION_ID_DESC</option>
+                <option value="u.username ASC">COM_YAQUIZ_CREATED_BY_USER</option>
+        </field>
+
+
+
+        <field
+        name="filter_limit"
+        type="list"
+        label="COM_YAQUIZ_FILTER_LIMIT_LABEL"
+        default="10"
+        >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        </field>
+
+
+
+
+    </fieldset>
+</form>

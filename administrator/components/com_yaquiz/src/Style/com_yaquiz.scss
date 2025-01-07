@@ -1,0 +1,69 @@
+.questionpreview .questiondetails{
+    max-height: 300px;
+    overflow-y: auto;
+}
+.questionicon{
+    padding: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 0;
+}
+
+.questionpreview .card-header{
+    padding-left: 1.5rem;
+}
+
+//if has form-check-input checked
+.questionpreview:has(.form-check-input:checked){
+    border: 2px solid #17d1ff;
+}
+
+
+.card.drag-item{
+    cursor: move;
+    padding-top: 5px;
+    background-color: #c5c5c5;
+
+}
+
+
+.card.drag-item.questionpreview:has(.form-check-input:checked){
+    background:  rgb(10, 10, 10);
+}
+
+.dragging{
+    opacity: 0.5;
+}
+
+.drag-dropzone{
+    display: block;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    
+}
+
+.drag-dropzone.over{
+    border: 1px dashed #ccc;
+    background-color: #a0fdbf;
+    padding: 1rem;
+}
+
+.drag-dropzone.visible {
+    display: block;
+    border: 1px dashed #ccc;
+    margin-bottom: 0.5rem;
+    background-color: #ffffff5d;
+}
+
+// dark mode fixes... ugh
+@media (prefers-color-scheme: dark) {
+    .drag-dropzone.visible {
+        background-color: #0000005d;
+    }
+
+    .card-header.bg-light{
+        background: rgb(20, 20, 20) !important;
+    }
+}
